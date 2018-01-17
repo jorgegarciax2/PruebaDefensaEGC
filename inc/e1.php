@@ -2,7 +2,7 @@
 //index.php
 $user = "votaciones-user";
 $password = "votaciones-user-1928";
-$server = "g1_mariadb:3306";
+$server = "mysql:3306";
 $dbname = "votaciones_splc";
 $connect = mysqli_connect($server, $user, $password) or die("No se ha podido conectar con la base de datos");
 $db = mysqli_select_db($connect, $dbname) or die("No se ha podido conectar con la base de datos");
