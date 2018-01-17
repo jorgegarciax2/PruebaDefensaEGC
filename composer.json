@@ -1,0 +1,12 @@
+{
+    "required":{
+        "php": ">=7.0.0"
+    },
+    "required-dev":{
+        "phpunit/phpunit": "5.0.0"
+    },
+    "autoload": {
+        "prs-0" : {"deploy\\tests\\" : "tests/"}
+    } 
+
+}

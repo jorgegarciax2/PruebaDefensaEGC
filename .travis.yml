@@ -1,0 +1,32 @@
+sudo: required
+
+language: php
+php:
+  - 7.2
+
+services:
+  - mariadb
+
+before_script:
+  - composer self-update
+  - composer install
+
+script:
+  - phpunit
+
+before_deploy:
+  - zip Redes-Sociales.zip *
+  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+  
+deploy:
+  provider: releases
+  api_key:
+    secure: AF4oQAZKgEln5FZaysLWARCCfIcJh97b+LgdqlZRwpjCudC5q5QyTEusE4Lnk29xRFqPAUbecQP235o0JD/v8VZdKUmz7wp+EYXd81CimOS5+D+ZZ+uU6+HaevsS6akOXDqs/lURER6k8XkxzE5wY46Kgl/NiWjqDQtjyvWsjwyVJNPS5f1TjW4fMAuQnbUYEln1dchDJ4/T/YieH54YO/RxfUszWX62h1G2O0KDf0CzrEJAoPKi4oL9y5Ga8So5PcFN27CqghfVd6EvmNpfx/ma4pDqxzDo/r0MUvs0nCdlxhyTNy5zwnSIDrt29ZaC0yqqY+Hb9knxGK/jDs7C62Ik+mPlZalqMkAHe0Z/WIggmSqRAjEE4OduQc53I+TdUiS+T3CwiOTgoVRSUjXQ1TCt5SfDuWVXm2fKNYtqIgObFh3TNSBF+GjdPGrw0kXROV6gOqTQtPlLEt68u8VXufzZzaRdpPV8bLUVzXoE2uKH3vy9lsad8QYN0vzJ4efr8ewxyRnf+rkFzbsC2+qPSQFL/CPMXCJhfCIbPeV9oqVNM551il+yYl0GuiCVozqSK+Oza7Qrjfda8dNpYN2gYcofggtEmzK4A0UAhWbiVJA28ibcymzpmFBYpuoatCBA7heHjpjHcW9BiJRPDvbKHcDSOl3N/pFy2dcL3NJDkN0=
+  file_glob: true
+  file:
+    - 'Manual de usuario.pdf'
+  skip_cleanup: true
+  on:
+    repo: Proyecto-EGC-G1/RedesSociales-EGC-G1
+    tags: true
+    all_branches: true
