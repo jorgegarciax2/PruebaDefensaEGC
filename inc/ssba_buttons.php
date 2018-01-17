@@ -992,7 +992,7 @@ add_action('dynamic_sidebar_after', 'publicar_resultados');
 function publicar_resultados() {
 	$user = "votaciones-user";
 	$password = "votaciones-user-1928";
-	$server = "g1_mariadb:3306";
+	$server = "mysql:3306";
 	$dbname = "votaciones_splc";
 
 	//Conexión con la bd
