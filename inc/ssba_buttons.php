@@ -966,7 +966,7 @@ if ($arrSettings['ssba_twitter_follow'] == true && ($arrSettings['ssba_facebook_
     add_action( 'dynamic_sidebar_after', 'ssba_twitter_facebook_follow_button');
     function ssba_twitter_facebook_follow_button() {
         $arrSettings = get_ssba_settings();
-        echo '<div><a href="https://twitter.com/'.$arrSettings["ssba_twitter_follow_user"].'?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="true">Follow @'.$arrSettings['ssba_twitter_follow_user'].'</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>';
+        echo '<div><a href="https://twitter.com/'.$arrSettings["ssba_twitter_follow_user"].'?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @'.$arrSettings['ssba_twitter_follow_user'].'</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>';
         echo '<div><iframe src="https://www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2F'.$arrSettings['ssba_facebook_follow_user'].'&width=0&height=21&layout=button_count&size=large&show_faces=true&appId" width="300" height="30" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="false"></iframe></div>';
     }
 }
@@ -974,7 +974,7 @@ elseif($arrSettings['ssba_twitter_follow'] == true){
     add_action( 'dynamic_sidebar_after', 'ssba_twitter_follow_button');
     function ssba_twitter_follow_button() {
         $arrSettings = get_ssba_settings();
-        echo '<div><a href="https://twitter.com/'.$arrSettings['ssba_twitter_follow_user'].'?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="true">Follow @'.$arrSettings['ssba_twitter_follow_user'].'</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>';
+        echo '<div><a href="https://twitter.com/'.$arrSettings['ssba_twitter_follow_user'].'?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @'.$arrSettings['ssba_twitter_follow_user'].'</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>';
     }
 }
 elseif($arrSettings['ssba_facebook_follow'] == true){
